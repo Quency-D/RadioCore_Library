@@ -76,6 +76,10 @@ An external chain of individually addressable RGB pixels controlled by a
 single data signal.
 _Avoid_: generic RGB LED, onboard LED
 
+**Buzzer output**:
+The board-designated PWM output connected to a piezo buzzer or buzzer module.
+_Avoid_: tone pin, speaker output
+
 **Motor control input**:
 One of a pair of digital direction signals connected to an external motor
 driver; together the pair selects a stopped state or a drive direction.

@@ -32,6 +32,7 @@ The library declares these Arduino dependencies:
   [claws/BH1750](https://github.com/claws/BH1750)
 - `Adafruit NeoPixel`
 - `ESP32Servo` for ESP32-based RadioCore boards
+- `NonBlockingRTTTL` version 1.4.0 or newer for non-blocking buzzer melodies
 
 Dependency-aware Arduino tools can install these libraries automatically.
 RadioCore_Kit does not copy, wrap, or re-export them.
@@ -61,6 +62,7 @@ compile time.
 | `Soil_Moisture_Read` | Read and calibrate an analog soil moisture sensor | [Guide](examples/Soil_Moisture_Read/README.md) |
 | `NV3001B_Display` | Exercise the 128-by-220 color TFT | [Guide](examples/NV3001B_Display/README.md) |
 | `WS2812` | Run a three-color breathing animation | [Sketch](examples/WS2812/WS2812.ino) |
+| `Buzzer_Control` | Play and repeat an RTTTL melody through the board-designated buzzer output | [Sketch](examples/Buzzer_Control/Buzzer_Control.ino) |
 | `Motor_Control` | Drive two direction inputs on an external motor driver | [Sketch](examples/Motor_Control/Motor_Control.ino) |
 | `Relay_Control` | Toggle an active-high relay module | [Sketch](examples/Relay_Control/Relay_Control.ino) |
 | `Servo_Control` | Control both channels of an RS-SV01 servo driver | [Sketch](examples/Servo_Control/Servo_Control.ino) |
@@ -83,9 +85,10 @@ A new board declares only the capabilities it supports:
   `CO01_Read`, and `Soil_Moisture_Read`; CO01 also requires its control pin.
 - NV3001B pins, active levels, SPI frequency, and one supported display
   transport for `NV3001B_Display`.
-- A data pin for `WS2812`, two motor-driver inputs for `Motor_Control`, a relay
-  output and active level for `Relay_Control`, and two PWM pins plus driver
-  enable facts for `Servo_Control`.
+- A data pin for `WS2812`, a buzzer output pin and any shared peripheral power
+  control required by `Buzzer_Control`, two motor-driver inputs for
+  `Motor_Control`, a relay output and active level for `Relay_Control`, and two
+  PWM pins plus driver enable facts for `Servo_Control`.
 
 The shared examples currently support the ESP32/WiFi Kit Series and Heltec
 nRF52 peripheral APIs used by RC32, RCC6, and RC52. A board with a different

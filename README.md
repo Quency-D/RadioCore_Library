@@ -30,6 +30,10 @@ The library declares these Arduino dependencies:
 - `Adafruit BME280 Library`
 - `BH1750` version 1.3.0 or newer from
   [claws/BH1750](https://github.com/claws/BH1750)
+- `SparkFun MMC5983MA Magnetometer Arduino Library` version 1.1.5 or newer
+  for the onboard MMC5983MA magnetometer
+- `ICM42670P` version 1.0.8 or newer from TDK InvenSense as the compatible
+  driver used by the onboard ICM42607P example
 - `Adafruit NeoPixel`
 - `ESP32Servo` for ESP32-based RadioCore boards
 - `NonBlockingRTTTL` version 1.4.0 or newer for non-blocking buzzer melodies
@@ -56,6 +60,8 @@ compile time.
 | Example | Purpose | Documentation |
 | --- | --- | --- |
 | `BH1750_Read` | Read ambient light over Sensor I2C | [Guide](examples/BH1750_Read/README.md) |
+| `MMC5983MA_Read` | Read the onboard three-axis magnetic field in gauss on RC32 and RC52 | [Guide](examples/MMC5983MA_Read/README.md) |
+| `ICM42607P_Read` | Read onboard acceleration in g and angular rate in degrees per second on RC32 and RC52 | [Guide](examples/ICM42607P_Read/README.md) |
 | `CH01_Read` | Estimate CH01 gas concentration and trend | [Guide](examples/CH01_Read/README.md) |
 | `CO01_Read` | Run the CO01 warm-up cycle and estimate concentration | [Guide](examples/CO01_Read/README.md) |
 | `VO01_Read` | Estimate VO01 gas concentration and trend | [Guide](examples/VO01_Read/README.md) |
@@ -82,6 +88,8 @@ A new board declares only the capabilities it supports:
 
 - Sensor I2C instance, pins, frequency, and optional sensor-power control for
   `BH1750_Read`.
+- Onboard MMC5983MA and ICM42607P capability flags plus any shared sensor-reset
+  pin and release level required by their examples.
 - ADC pins and optional power controls for `CH01_Read`, `VO01_Read`,
   `CO01_Read`, and `Soil_Moisture_Read`; CO01 also requires its control pin.
 - NV3001B pins, active levels, SPI frequency, and one supported display

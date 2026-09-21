@@ -10,7 +10,7 @@ The shared Arduino package for the RadioCore hardware family.
 _Avoid_: RadioCore Library, sensor driver bundle, full board support package
 
 **Sensor I2C**:
-The board-designated I2C bus used by RadioCore examples for external sensors.
+The board-designated I2C bus used by RadioCore onboard and external sensors.
 It may map to different `TwoWire` instances or pins on different boards.
 _Avoid_: default Wire, I2C0
 
@@ -18,6 +18,16 @@ _Avoid_: default Wire, I2C0
 The board-controlled power domain that supplies external sensors and may be
 shared with other peripherals.
 _Avoid_: sensor VCC pin, sensor enable pin, Vext
+
+**MMC5983MA magnetometer**:
+The board-integrated three-axis magnetic-field sensor on Sensor I2C in RC32
+and RC52.
+_Avoid_: MMC5983, compass module, external magnetometer
+
+**ICM42607P motion sensor**:
+The board-integrated inertial sensor on Sensor I2C in RC32 and RC52; its
+compatible Arduino driver dependency is named ICM42670P.
+_Avoid_: ICM42670P sensor, external IMU
 
 **Board configuration**:
 Compile-time hardware facts for one RadioCore board, without peripheral

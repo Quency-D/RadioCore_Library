@@ -61,6 +61,7 @@ compile time.
 | `VO01_Read` | Estimate VO01 gas concentration and trend | [Guide](examples/VO01_Read/README.md) |
 | `Soil_Moisture_Read` | Read and calibrate an analog soil moisture sensor | [Guide](examples/Soil_Moisture_Read/README.md) |
 | `NV3001B_Display` | Exercise the 128-by-220 color TFT | [Guide](examples/NV3001B_Display/README.md) |
+| `Rotary_Encoder` | Report rotary direction, signed count, and user-button presses on RC32 and RC52 | [Sketch](examples/Rotary_Encoder/Rotary_Encoder.ino) |
 | `WS2812` | Run a three-color breathing animation | [Sketch](examples/WS2812/WS2812.ino) |
 | `Buzzer_Control` | Play and repeat an RTTTL melody through the board-designated buzzer output | [Sketch](examples/Buzzer_Control/Buzzer_Control.ino) |
 | `Motor_Control` | Drive two direction inputs on an external motor driver | [Sketch](examples/Motor_Control/Motor_Control.ino) |
@@ -85,6 +86,10 @@ A new board declares only the capabilities it supports:
   `CO01_Read`, and `Soil_Moisture_Read`; CO01 also requires its control pin.
 - NV3001B pins, active levels, SPI frequency, and one supported display
   transport for `NV3001B_Display`.
+- A rotary encoder I2C address and phase masks for `Rotary_Encoder`, plus an
+  independently declared user-button pin, active level, and input mode. The
+  current RC32 and RC52 mappings share the configured Sensor I2C bus and power
+  rail.
 - A data pin for `WS2812`, a buzzer output pin and any shared peripheral power
   control required by `Buzzer_Control`, two motor-driver inputs for
   `Motor_Control`, a relay output and active level for `Relay_Control`, and two

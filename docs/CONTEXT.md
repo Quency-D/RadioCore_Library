@@ -90,6 +90,16 @@ The board-designated digital signal connected to the logic input of an
 external relay module or driver.
 _Avoid_: relay coil output, load power output
 
+**Rotary encoder input**:
+The board-designated two-channel user control whose rotation produces previous
+or next steps.
+_Avoid_: rotary button, generic GPIO input
+
+**User button input**:
+The board-designated momentary digital input reported independently from
+rotary encoder movement.
+_Avoid_: rotary encoder press, enter key
+
 **Servo control interface**:
 The board-designated pair of servo PWM signals and enable signal used to
 connect an external dual-servo driver such as the RS-SV01.

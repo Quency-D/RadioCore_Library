@@ -39,9 +39,29 @@ The 128-by-220 color TFT panel configured by RadioCore display examples.
 _Avoid_: OLED, generic screen
 
 **Display transport**:
-The board-selected SPI mechanism used to send commands and pixels to the
-NV3001B display.
+The board-selected SPI mechanism used to send commands and pixels to a
+configured display device, including the NV3001B display or an e-paper driver
+board.
 _Avoid_: default SPI, display bus
+
+**DEPG1020BNS770F1 e-paper panel**:
+The 960-by-640 monochrome e-paper panel driven by an SSD1677 controller.
+_Avoid_: generic 10.2-inch display, TFT, grayscale panel
+
+**E0213A367 e-paper panel**:
+The 128-by-250 monochrome e-paper panel with a 122-by-250 drawable area,
+connected through the RD02E e-paper driver board in RadioCore examples.
+_Avoid_: generic 2.13-inch display, Wireless Paper display
+
+**RD02E e-paper driver board**:
+The external board that supplies switched power and high-voltage drive circuits
+for compatible e-paper panels, including DEPG1020BNS770F1 and E0213A367, and
+exposes their controller logic interface.
+_Avoid_: bare panel, passive adapter, TFT connector
+
+**Full-screen e-paper refresh**:
+A monochrome update that refreshes the complete e-paper image in one operation.
+_Avoid_: partial refresh, fast refresh, grayscale refresh
 
 **Analog gas sensor**:
 A CH01, VO01, or CO01 device that represents gas concentration as an analog output

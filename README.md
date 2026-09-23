@@ -51,6 +51,11 @@ that fork manually in the Arduino sketchbook `libraries` directory. It is not
 listed in `library.properties` because NV3001B support has not been merged into
 the Arduino Library Manager version of `GFX Library for Arduino`.
 
+`DEPG1020BNS770F1_Display` and `E0213A367_Display` require the development
+version of `heltec-eink-modules` containing the external RD02E constructors and
+RC52 platform support. Install that version manually until the changes are
+available in a published Library Manager release.
+
 ## Examples
 
 Open the examples from `File > Examples > RadioCore_Kit` in the Arduino
@@ -67,6 +72,8 @@ compile time.
 | `VO01_Read` | Estimate VO01 gas concentration and trend | [Guide](examples/VO01_Read/README.md) |
 | `Soil_Moisture_Read` | Read and calibrate an analog soil moisture sensor | [Guide](examples/Soil_Moisture_Read/README.md) |
 | `NV3001B_Display` | Exercise the 128-by-220 color TFT | [Guide](examples/NV3001B_Display/README.md) |
+| `DEPG1020BNS770F1_Display` | Refresh the 960-by-640 monochrome e-paper panel on RC32 or RC52 | [Guide](examples/DEPG1020BNS770F1_Display/README.md) |
+| `E0213A367_Display` | Refresh the 122-by-250 drawable E0213A367 e-paper panel on RC32 or RC52 | [Guide](examples/E0213A367_Display/README.md) |
 | `Rotary_Encoder` | Report rotary direction, signed count, and user-button presses on RC32 and RC52 | [Sketch](examples/Rotary_Encoder/Rotary_Encoder.ino) |
 | `WS2812` | Run a three-color breathing animation | [Sketch](examples/WS2812/WS2812.ino) |
 | `Buzzer_Control` | Play and repeat an RTTTL melody through the board-designated buzzer output | [Sketch](examples/Buzzer_Control/Buzzer_Control.ino) |
@@ -94,6 +101,9 @@ A new board declares only the capabilities it supports:
   `CO01_Read`, and `Soil_Moisture_Read`; CO01 also requires its control pin.
 - NV3001B pins, active levels, SPI frequency, and one supported display
   transport for `NV3001B_Display`.
+- RD02E driver-board pins and active levels for the shared paged
+  DEPG1020BNS770F1 and E0213A367 examples. Document the connector mapping and
+  shared-pin conflicts.
 - A rotary encoder I2C address and phase masks for `Rotary_Encoder`, plus an
   independently declared user-button pin, active level, and input mode. The
   current RC32 and RC52 mappings share the configured Sensor I2C bus and power
